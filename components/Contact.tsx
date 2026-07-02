@@ -5,24 +5,41 @@ import { useState } from 'react'
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
+    setError('')
+
     const form = e.currentTarget
     const data = new FormData(form)
 
-    // Replace YOUR_FORM_ID with your Formspree form ID (formspree.io)
-    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      method: 'POST',
-      body: data,
-      headers: { Accept: 'application/json' },
-    })
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          business: data.get('business'),
+          message: data.get('message'),
+        }),
+      })
 
-    setLoading(false)
-    if (res.ok) {
+      const result = await res.json()
+
+      if (!res.ok) {
+        setError(result.error || 'Something went wrong. Please try again or email me directly.')
+        return
+      }
+
       setSubmitted(true)
       form.reset()
+    } catch {
+      setError('Something went wrong. Please try again or email me directly.')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -110,6 +127,9 @@ export default function Contact() {
                   className="form-input resize-none"
                 />
               </div>
+              {error && (
+                <p className="text-red-400 text-sm">{error}</p>
+              )}
               <button
                 type="submit"
                 disabled={loading}
