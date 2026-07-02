@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <defs>
+    <linearGradient id="border" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="0.5" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="45" y1="45" x2="135" y2="135" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="#0B0E14"/>
+  <rect x="6" y="6" width="168" height="168" rx="34" stroke="url(#border)" stroke-width="8"/>
+  <path
+    d="M48 124V58h15.8l18 40.5 18-40.5H115V124h-13.5V84.5l-17.2 39.5H71.5L54.3 84.5V124H48Z"
+    fill="url(#mark)"
+  />
+</svg>
