@@ -12,7 +12,7 @@ export function personJsonLd() {
     email: siteConfig.email,
     telephone: siteConfig.phoneE164,
     jobTitle: siteConfig.jobTitle,
-    image: `${siteUrl}/opengraph-image`,
+    image: `${siteUrl}/michael.jpg`,
     sameAs: siteConfig.sameAs,
     address: {
       '@type': 'PostalAddress',
