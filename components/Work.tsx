@@ -5,15 +5,11 @@ export default function Work() {
     <section id="work" className="px-6 py-24 border-t border-line">
       <div className="max-w-5xl mx-auto">
         <p className="text-[13px] font-semibold tracking-[0.14em] uppercase text-mute mb-3">
-          Selected work
+          Work
         </p>
-        <h2 className="font-serif text-3xl sm:text-4xl tracking-tight text-ink max-w-2xl mb-4">
-          Products people open.
+        <h2 className="font-serif text-3xl sm:text-4xl tracking-tight text-ink max-w-2xl mb-16">
+          Two products I have built.
         </h2>
-        <p className="text-mute text-lg leading-relaxed max-w-2xl mb-16">
-          Two library apps, in the world. Both exist so readers can find, read,
-          and listen to trusted books on a phone—quietly, without the usual noise.
-        </p>
 
         <div className="space-y-20">
           {projects.map((project, i) => (
@@ -63,16 +59,12 @@ export default function Work() {
               </div>
 
               <div className={i % 2 === 1 ? 'md:order-1' : ''}>
-                <div className="mx-auto max-w-[260px] sm:max-w-[280px]">
-                  <div className="rounded-[1.75rem] bg-ink p-2 shadow-[0_24px_50px_-20px_rgba(28,25,23,0.45)]">
-                    <div className="overflow-hidden rounded-[1.3rem] aspect-[9/19.5] bg-ink">
-                      <img
-                        src={project.screenshot}
-                        alt={project.screenshotAlt}
-                        className="w-full h-full object-cover object-top block"
-                      />
-                    </div>
-                  </div>
+                <div className="mx-auto w-full max-w-[280px]">
+                  <img
+                    src={project.screenshot}
+                    alt={project.screenshotAlt}
+                    className="w-full h-auto rounded-[2rem] shadow-[0_20px_40px_-16px_rgba(28,25,23,0.35)] ring-1 ring-black/10"
+                  />
                 </div>
               </div>
             </article>

@@ -1,6 +1,6 @@
 # Michael Mangialardi
 
-Personal site for independent software work: mobile apps and digital products.
+Personal site for independent software work: websites, apps, and automation.
 
 ## Development
 

@@ -1,6 +1,6 @@
 const background = [
   'Software engineering and management, 10+ years',
-  'Shipped iOS and Android apps used by readers worldwide',
+  'Websites, iOS and Android apps, and process automation',
   'Cloud systems and long-lived products, including work on a platform doing over $1B in annual revenue',
   'Based in the Roanoke and New River Valleys',
 ]
@@ -14,18 +14,16 @@ export default function About() {
             About
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl tracking-tight text-ink mb-6">
-            A local person who ships real software.
+            I work independently.
           </h2>
           <p className="text-[17px] leading-relaxed text-mute mb-5">
-            I&apos;ve spent a decade in software engineering and management. That
-            includes helping run software and teams for a cloud product used at
-            a large scale. I now build independently—mostly mobile apps, and the
-            product work that makes them last.
+            I have spent a decade in software engineering and management,
+            including helping run software and teams for a cloud product used
+            at a large scale. I now build on my own from Roanoke, Virginia.
           </p>
           <p className="text-[17px] leading-relaxed text-mute">
-            Recent work has been with publishers and ministries that needed
-            library apps for their readers. I am not selling a method or a
-            platform. I am available to build the thing that needs to exist.
+            If we work together, you work with me. I keep communication open
+            and I move quickly.
           </p>
         </div>
 

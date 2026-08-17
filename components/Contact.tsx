@@ -51,10 +51,10 @@ export default function Contact() {
             Contact
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl tracking-tight text-ink mb-4">
-            If you have a product that needs to exist, write to me.
+            Get in touch.
           </h2>
           <p className="text-[17px] leading-relaxed text-mute mb-8">
-            I reply within one business day. You can also call or email directly.
+            I reply within one business day. Call or email if that is easier.
           </p>
           <div className="space-y-3 text-[15px]">
             <a href="tel:5408354896" className="block text-ink hover:text-navy transition-colors">
@@ -112,13 +112,13 @@ export default function Contact() {
                   id="business"
                   name="business"
                   type="text"
-                  placeholder="Publisher, ministry, company…"
+                  placeholder="Company or organization"
                   className="form-input"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-ink mb-2">
-                  What needs to be built?
+                  What are you working on?
                 </label>
                 <textarea
                   id="message"

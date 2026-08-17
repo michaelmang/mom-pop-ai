@@ -16,9 +16,9 @@ export const siteUrl = getSiteUrl()
 export const siteConfig = {
   name: 'Michael Mangialardi',
   shortName: 'Michael Mangialardi',
-  title: 'Michael Mangialardi — Mobile apps and digital products',
+  title: 'Michael Mangialardi, independent developer',
   description:
-    'Independent developer in Roanoke, Virginia. I design and ship mobile apps and digital products for organizations that need software people actually use.',
+    'Independent developer in Roanoke, Virginia. I build websites, apps, and automations. You work with me directly.',
   locale: 'en_US',
   phone: '540-835-4896',
   email: 'mikemangialardi94@gmail.com',
@@ -31,13 +31,12 @@ export const siteConfig = {
     'Virginia',
   ],
   keywords: [
-    'mobile app developer Virginia',
-    'iOS developer Roanoke',
-    'Android app developer',
-    'custom mobile apps',
     'independent software developer',
-    'app developer New River Valley',
-    'digital product development',
+    'website development Virginia',
+    'mobile app developer Roanoke',
+    'process automation',
+    'custom software',
+    'iOS and Android apps',
   ],
 }
 
@@ -47,16 +46,16 @@ export const projects = [
     client: 'Christian Publication Resource Foundation',
     platforms: 'iOS',
     summary:
-      'A free library of 1,500+ classic Reformed and biblical works. Pastors, students, and readers can browse, download, highlight, and listen—without an account wall in the way.',
+      'A free iOS library of 1,700+ classic Reformed and biblical works. Readers can browse, download, highlight, and listen.',
     details:
-      'The product is a quiet reading app: search by author or title, pick up where you left off, keep notes and highlights, and download books for offline use. Audio is available for selected works.',
+      'Search by author or title, pick up where you left off, keep notes, and download books for offline use. Audio is available for selected works.',
     icon: '/work/monergism-icon.png',
-    screenshot: '/work/monergism-home.png',
-    screenshotAlt: 'Monergism eBook Library home screen on iPhone',
+    screenshot: '/work/monergism-home.jpg',
+    screenshotAlt: 'Monergism eBook Library home screen',
     links: [
       {
         label: 'App Store',
-        href: 'https://apps.apple.com/app/monergism-ebook-library/id6448814913',
+        href: 'https://apps.apple.com/gh/app/monergism-ebook-library/id6448814913',
       },
     ],
   },
@@ -65,12 +64,12 @@ export const projects = [
     client: 'Gratia Tech',
     platforms: 'iOS, Android, and web',
     summary:
-      "An Arabic-first Christian library. Readers can read or listen to trusted books, follow daily plans, and keep a personal library—with publishing partners who needed their catalog in people's pockets.",
+      'An Arabic library app for reading and listening. Daily plans, saved progress, offline access, and audio.',
     details:
-      'Kalam is built for Arabic from the start: comfortable reading, saved progress, offline access, and audio with playback controls. The public site and the apps are one product, not a brochure for something else.',
+      'Built for Arabic from the start. The website and the apps are the same product.',
     icon: '/work/kalam-icon.png',
     screenshot: '/work/kalam-home.jpg',
-    screenshotAlt: 'Kalam app screens showing the Arabic Christian library',
+    screenshotAlt: 'Kalam app home screen',
     links: [
       { label: 'kalam.app', href: 'https://kalam.app/en/' },
       {
