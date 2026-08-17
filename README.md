@@ -28,8 +28,9 @@ This keeps canonical URLs, Open Graph tags, and the sitemap pointed at your real
 ### SEO
 
 - `/sitemap.xml` and `/robots.txt` are generated automatically
-- JSON-LD structured data (`ProfessionalService` + `WebSite`) is in the page head
-- Metadata is configured in `app/layout.tsx` and `lib/site.ts`
+- JSON-LD covers the person, the service, the two apps, FAQs, and breadcrumbs
+- Indexable work pages live at `/work`, `/work/monergism-ebook-library`, and `/work/kalam`
+- Metadata is configured in `app/layout.tsx`, `app/work/`, and `lib/site.ts`
 
 ### Contact form
 
