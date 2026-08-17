@@ -26,6 +26,16 @@ export default function About() {
             If we work together, you work with me. I keep communication open
             and I move quickly.
           </p>
+          <p className="text-[17px] leading-relaxed text-mute mb-5">
+            I have spent a decade in software engineering and management,
+            including helping run software and teams for a cloud product used
+            at a large scale. I now build websites, apps, and automations on my
+            own from the Blacksburg and Christiansburg area.
+          </p>
+          <p className="text-[17px] leading-relaxed text-mute">
+            If we work together, you work with me. I keep communication open
+            and I move quickly.
+          </p>
         </div>
 
         <div className="bg-white border border-line rounded-lg p-8">
