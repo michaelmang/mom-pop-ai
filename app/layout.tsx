@@ -5,7 +5,7 @@ import JsonLd from '@/components/JsonLd'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { siteJsonLd } from '@/lib/seo'
-import { siteConfig, siteUrl } from '@/lib/site'
+import { siteConfig, siteUrl, isPreviewDeployment } from '@/lib/site'
 import './globals.css'
 
 const sans = Source_Sans_3({
@@ -38,17 +38,19 @@ export const metadata: Metadata = {
   creator: siteConfig.shortName,
   publisher: siteConfig.shortName,
   category: 'Technology',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
-  },
+  robots: isPreviewDeployment
+    ? { index: false, follow: false }
+    : {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+          'max-video-preview': -1,
+        },
+      },
   openGraph: {
     type: 'website',
     locale: siteConfig.locale,

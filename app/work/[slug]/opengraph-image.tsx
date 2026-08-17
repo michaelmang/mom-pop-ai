@@ -58,7 +58,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             fontWeight: 600,
           }}
         >
-          Roanoke, Virginia
+          Virginia
         </div>
       </div>
     ),

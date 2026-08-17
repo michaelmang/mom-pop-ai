@@ -8,7 +8,8 @@ export default function Footer() {
         <div>
           <p className="font-serif text-[17px] text-ink mb-2">{siteConfig.name}</p>
           <p className="text-sm text-mute max-w-xs">
-            Independent software developer in Roanoke, Virginia. Websites, apps, and automation.
+            Independent software developer in Virginia. Websites, apps, and
+            automation. Local and remote.
           </p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
@@ -26,7 +27,7 @@ export default function Footer() {
           </Link>
         </nav>
         <div className="text-sm text-mute space-y-1">
-          <p>Roanoke, VA</p>
+          <p>Blacksburg, VA</p>
           <a href={`tel:${siteConfig.phoneE164}`} className="block hover:text-ink transition-colors">
             {siteConfig.phone}
           </a>

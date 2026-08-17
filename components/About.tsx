@@ -2,7 +2,7 @@ const background = [
   'Software engineering and management, 10+ years',
   'Websites, iOS and Android apps, and process automation',
   'Cloud systems and long-lived products, including work on a platform doing over $1B in annual revenue',
-  'Based in the Roanoke and New River Valleys',
+  'Based in Blacksburg and Christiansburg, near Roanoke',
 ]
 
 export default function About() {
@@ -20,7 +20,7 @@ export default function About() {
             I have spent a decade in software engineering and management,
             including helping run software and teams for a cloud product used
             at a large scale. I now build websites, apps, and automations on my
-            own from Roanoke, Virginia.
+            own from the Blacksburg and Christiansburg area.
           </p>
           <p className="text-[17px] leading-relaxed text-mute">
             If we work together, you work with me. I keep communication open

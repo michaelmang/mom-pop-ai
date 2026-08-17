@@ -1,51 +1,51 @@
+export const productionSiteUrl = 'https://www.michaelmang.com'
+
 function getSiteUrl() {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '')
   }
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`
+  if (process.env.VERCEL) {
+    return productionSiteUrl
   }
   return 'http://localhost:3000'
 }
 
 export const siteUrl = getSiteUrl()
+export const isPreviewDeployment = process.env.VERCEL_ENV === 'preview'
 
 export const siteConfig = {
   name: 'Michael Mangialardi',
   shortName: 'Michael Mangialardi',
-  title: 'Michael Mangialardi | Websites, Apps, and Automation in Roanoke, VA',
+  title: 'Michael Mangialardi | Websites, Apps, and Automation',
   description:
-    'Independent software developer in Roanoke and the New River Valley, Virginia. I build websites, iOS and Android apps, and process automations. You work with me directly.',
+    'Independent software developer in Blacksburg, Virginia, near Roanoke. I build websites, iOS and Android apps, and process automations. Local and remote.',
   locale: 'en_US',
   phone: '540-835-4896',
   phoneE164: '+15408354896',
   email: 'mikemangialardi94@gmail.com',
   jobTitle: 'Independent software developer',
   location: {
-    locality: 'Roanoke',
+    locality: 'Blacksburg',
     region: 'VA',
     regionName: 'Virginia',
     country: 'US',
   },
   sameAs: ['https://github.com/michaelmang'],
   areaServed: [
+    'Blacksburg',
+    'Christiansburg',
     'Roanoke',
     'Salem',
-    'Christiansburg',
-    'Blacksburg',
-    'New River Valley',
     'Virginia',
+    'United States',
   ],
   keywords: [
-    'software developer Roanoke VA',
-    'website developer Roanoke',
+    'software developer Blacksburg VA',
+    'website developer Christiansburg',
     'iOS app developer Virginia',
     'Android app developer',
     'process automation Virginia',
-    'independent software developer New River Valley',
+    'remote software developer',
     'custom website development Roanoke',
     'mobile app developer Blacksburg',
     'freelance developer Christiansburg',
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     ],
     seoTitle: 'Monergism eBook Library | iOS App by Michael Mangialardi',
     seoDescription:
-      'iOS app for the Monergism eBook Library: 1,700+ classic Reformed and biblical works, with offline reading, notes, highlights, and audio. Built by Michael Mangialardi in Roanoke, Virginia.',
+      'iOS app for the Monergism eBook Library: 1,700+ classic Reformed and biblical works, with offline reading, notes, highlights, and audio. Built by Michael Mangialardi.',
     icon: '/work/monergism-icon.png',
     screenshot: '/work/monergism-home.jpg',
     screenshotAlt:
@@ -161,7 +161,7 @@ export const faqs = [
   {
     question: 'Where are you based?',
     answer:
-      'Roanoke, Virginia. I work with people in the New River Valley, including Blacksburg and Christiansburg, and with teams farther away.',
+      'Blacksburg and Christiansburg, Virginia, near Roanoke. I work with people nearby and with remote clients.',
   },
   {
     question: 'Do I work with you or with an agency?',

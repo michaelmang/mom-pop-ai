@@ -30,7 +30,7 @@ export default function Image() {
             marginBottom: 28,
           }}
         >
-          Selected work · Roanoke, Virginia
+          Selected work · Virginia
         </div>
         <div
           style={{

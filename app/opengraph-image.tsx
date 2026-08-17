@@ -31,7 +31,7 @@ export default function Image() {
             marginBottom: 28,
           }}
         >
-          Independent developer · Roanoke, Virginia
+          Independent developer · Blacksburg, Virginia
         </div>
 
         <div
