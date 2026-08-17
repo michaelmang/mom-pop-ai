@@ -39,13 +39,13 @@ export default function Image() {
             display: 'flex',
             fontSize: 64,
             fontWeight: 600,
-            lineHeight: 1.15,
+            lineHeight: 1.4,
             color: '#1C1917',
             letterSpacing: '-0.02em',
             maxWidth: 980,
           }}
         >
-          I design and ship mobile apps and digital products.
+          I build websites, apps, and automations.
         </div>
 
         <div
@@ -58,7 +58,7 @@ export default function Image() {
             maxWidth: 820,
           }}
         >
-          The work is in the store and in people's hands.
+          Direct work. Open communication. Fast development.
         </div>
 
         <div

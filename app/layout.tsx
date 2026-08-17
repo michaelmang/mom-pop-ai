@@ -51,17 +51,18 @@ const structuredData = [
       addressCountry: 'US',
     },
     knowsAbout: [
+      'Website development',
       'Mobile app development',
+      'Process automation',
       'iOS apps',
       'Android apps',
-      'Digital product design',
       'Custom software',
     ],
     serviceType: [
+      'Website development',
       'Mobile app development',
-      'iOS development',
-      'Android development',
-      'Digital product development',
+      'Process automation',
+      'Custom software development',
     ],
   },
 ]
