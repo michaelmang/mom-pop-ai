@@ -2,12 +2,11 @@ import type { Metadata } from 'next'
 import { siteConfig } from '@/lib/site'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import Services from '@/components/Services'
-import HowItWorks from '@/components/HowItWorks'
+import Work from '@/components/Work'
+import Approach from '@/components/Approach'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
-import StarField from '@/components/StarField'
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -20,17 +19,14 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="relative">
-      <StarField />
-      <div className="relative z-10">
-        <Nav />
-        <Hero />
-        <Services />
-        <HowItWorks />
-        <About />
-        <Contact />
-        <Footer />
-      </div>
+    <main>
+      <Nav />
+      <Hero />
+      <Work />
+      <Approach />
+      <About />
+      <Contact />
+      <Footer />
     </main>
   )
 }

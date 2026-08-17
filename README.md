@@ -1,6 +1,6 @@
-# Michael Mangialardi AI Consulting
+# Michael Mangialardi
 
-Landing page for local AI consulting in Roanoke and the New River Valley, Virginia.
+Personal site for independent software work: mobile apps and digital products.
 
 ## Development
 
