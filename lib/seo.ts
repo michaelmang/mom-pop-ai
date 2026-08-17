@@ -49,21 +49,22 @@ export function organizationJsonLd() {
       addressRegion: siteConfig.location.region,
       addressCountry: siteConfig.location.country,
     },
-    areaServed: siteConfig.areaServed.map((place) =>
-      place === 'Virginia' || place === 'New River Valley'
-        ? {
-            '@type': place === 'Virginia' ? 'State' : 'AdministrativeArea',
-            name: place,
-          }
-        : {
-            '@type': 'City',
-            name: place,
-            containedInPlace: {
-              '@type': 'State',
-              name: 'Virginia',
-            },
-          },
-    ),
+    areaServed: siteConfig.areaServed.map((place) => {
+      if (place === 'United States') {
+        return { '@type': 'Country', name: place }
+      }
+      if (place === 'Virginia') {
+        return { '@type': 'State', name: place }
+      }
+      return {
+        '@type': 'City',
+        name: place,
+        containedInPlace: {
+          '@type': 'State',
+          name: 'Virginia',
+        },
+      }
+    }),
     knowsAbout: [
       'Website development',
       'Mobile app development',

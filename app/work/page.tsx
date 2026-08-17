@@ -9,7 +9,7 @@ import { projects, siteUrl } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Websites, iOS apps, and Android apps I have built, including the Monergism eBook Library and Kalam. Independent software work from Roanoke, Virginia.',
+    'Websites, iOS apps, and Android apps I have built, including the Monergism eBook Library and Kalam. Independent software work from Virginia.',
   alternates: { canonical: '/work' },
   openGraph: {
     title: 'Work | Michael Mangialardi',

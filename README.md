@@ -13,17 +13,9 @@ npm run dev
 
 Connected to [Vercel](https://vercel.com/michaelmangs-projects/michael-ai). Pushes to `main` on GitHub auto-deploy.
 
-Production: https://michael-ai-nine.vercel.app
+Production: https://www.michaelmang.com
 
-### Custom domain
-
-Add your domain in the Vercel project settings, then set:
-
-```
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
-```
-
-This keeps canonical URLs, Open Graph tags, and the sitemap pointed at your real domain.
+Canonical URLs, Open Graph tags, and the sitemap use `https://www.michaelmang.com`. Override locally with `NEXT_PUBLIC_SITE_URL` if needed.
 
 ### SEO
 

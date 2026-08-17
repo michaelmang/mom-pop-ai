@@ -62,13 +62,13 @@ export default function Contact() {
               {siteConfig.phone}
             </a>
             <a
-              href="mailto:mikemangialardi94@gmail.com"
+              href={`mailto:${siteConfig.email}`}
               className="block text-ink hover:text-navy transition-colors"
             >
-              mikemangialardi94@gmail.com
+              {siteConfig.email}
             </a>
-            <p className="text-mute">Roanoke, Virginia</p>
-            <p className="text-mute">Serving the New River Valley and remote teams</p>
+            <p className="text-mute">Blacksburg, Virginia</p>
+            <p className="text-mute">Near Roanoke. Remote is fine.</p>
           </address>
         </div>
 
