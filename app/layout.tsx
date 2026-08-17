@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Source_Sans_3, Source_Serif_4 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import JsonLd from '@/components/JsonLd'
 import { siteConfig, siteUrl } from '@/lib/site'
 import './globals.css'
 
-const inter = Inter({
+const sans = Source_Sans_3({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sans',
   display: 'swap',
 })
 
-const mono = JetBrains_Mono({
+const serif = Source_Serif_4({
   subsets: ['latin'],
-  variable: '--font-mono',
+  variable: '--font-serif',
   display: 'swap',
 })
 
@@ -51,17 +51,17 @@ const structuredData = [
       addressCountry: 'US',
     },
     knowsAbout: [
-      'Artificial Intelligence',
-      'Small Business Automation',
-      'AI Tool Integration',
-      'Workflow Automation',
-      'ChatGPT for Business',
+      'Mobile app development',
+      'iOS apps',
+      'Android apps',
+      'Digital product design',
+      'Custom software',
     ],
     serviceType: [
-      'AI Consulting',
-      'AI Tool Setup',
-      'Business Process Automation',
-      'Small Business Technology Consulting',
+      'Mobile app development',
+      'iOS development',
+      'Android development',
+      'Digital product development',
     ],
   },
 ]
@@ -69,7 +69,7 @@ const structuredData = [
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteConfig.title} | Roanoke & New River Valley, VA`,
+    default: siteConfig.title,
     template: `%s | ${siteConfig.shortName}`,
   },
   description: siteConfig.description,
@@ -112,11 +112,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
       <head>
         <JsonLd data={structuredData} />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-paper text-ink">
         {children}
         <Analytics />
       </body>

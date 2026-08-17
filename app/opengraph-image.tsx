@@ -14,110 +14,63 @@ export default function Image() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          alignItems: 'center',
+          flexDirection: 'column',
           justifyContent: 'center',
-          background: '#0B0E14',
-          padding: 10,
+          background: '#F7F4EE',
+          padding: '72px 80px',
         }}
       >
         <div
           style={{
-            width: '100%',
-            height: '100%',
             display: 'flex',
-            background: 'linear-gradient(135deg, #A78BFA 0%, #7C3AED 50%, #2DD4BF 100%)',
-            borderRadius: 24,
-            padding: 5,
+            fontSize: 20,
+            fontWeight: 600,
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            color: '#57534E',
+            marginBottom: 28,
           }}
         >
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              background: '#0B0E14',
-              borderRadius: 20,
-              padding: '64px 72px',
-              position: 'relative',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                height: 220,
-                background:
-                  'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.22) 0%, transparent 70%)',
-              }}
-            />
+          Independent developer · Roanoke, Virginia
+        </div>
 
-            <div
-              style={{
-                display: 'flex',
-                fontSize: 22,
-                fontWeight: 600,
-                letterSpacing: '0.16em',
-                textTransform: 'uppercase',
-                color: '#2DD4BF',
-                marginBottom: 28,
-              }}
-            >
-              Local AI Consulting · Roanoke &amp; NRV, VA
-            </div>
+        <div
+          style={{
+            display: 'flex',
+            fontSize: 64,
+            fontWeight: 600,
+            lineHeight: 1.15,
+            color: '#1C1917',
+            letterSpacing: '-0.02em',
+            maxWidth: 980,
+          }}
+        >
+          I design and ship mobile apps and digital products.
+        </div>
 
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                fontSize: 72,
-                fontWeight: 800,
-                lineHeight: 1.05,
-                color: '#F8FAFC',
-                letterSpacing: '-0.03em',
-                maxWidth: 900,
-              }}
-            >
-              <span>Don&apos;t Learn AI.</span>
-              <span
-                style={{
-                  background: 'linear-gradient(135deg, #C4B5FD 0%, #2DD4BF 100%)',
-                  backgroundClip: 'text',
-                  color: 'transparent',
-                }}
-              >
-                Delegate It.
-              </span>
-            </div>
+        <div
+          style={{
+            display: 'flex',
+            marginTop: 36,
+            fontSize: 26,
+            lineHeight: 1.4,
+            color: '#57534E',
+            maxWidth: 820,
+          }}
+        >
+          The work is in the store and in people's hands.
+        </div>
 
-            <div
-              style={{
-                display: 'flex',
-                marginTop: 32,
-                fontSize: 28,
-                lineHeight: 1.4,
-                color: '#94A3B8',
-                maxWidth: 820,
-              }}
-            >
-              Done-for-you AI setup and automation for small businesses in Virginia.
-            </div>
-
-            <div
-              style={{
-                display: 'flex',
-                marginTop: 40,
-                fontSize: 22,
-                fontWeight: 600,
-                color: '#E2E8F0',
-              }}
-            >
-              Michael Mangialardi
-            </div>
-          </div>
+        <div
+          style={{
+            display: 'flex',
+            marginTop: 48,
+            fontSize: 22,
+            fontWeight: 600,
+            color: '#1E3A5F',
+          }}
+        >
+          Michael Mangialardi
         </div>
       </div>
     ),

@@ -32,7 +32,7 @@ export async function POST(request: Request) {
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
-        `Business: ${business || 'Not provided'}`,
+        `Organization: ${business || 'Not provided'}`,
         '',
         'Message:',
         message,
