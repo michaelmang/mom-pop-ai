@@ -1,7 +1,10 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Source_Sans_3, Source_Serif_4 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import JsonLd from '@/components/JsonLd'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+import { siteJsonLd } from '@/lib/seo'
 import { siteConfig, siteUrl } from '@/lib/site'
 import './globals.css'
 
@@ -17,55 +20,11 @@ const serif = Source_Serif_4({
   display: 'swap',
 })
 
-const structuredData = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: siteConfig.name,
-    url: siteUrl,
-    description: siteConfig.description,
-    inLanguage: 'en-US',
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    '@id': `${siteUrl}/#business`,
-    name: siteConfig.name,
-    description: siteConfig.description,
-    url: siteUrl,
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
-    priceRange: '$$',
-    areaServed: siteConfig.areaServed.map((city) => ({
-      '@type': 'City',
-      name: city,
-      containedInPlace: {
-        '@type': 'State',
-        name: 'Virginia',
-      },
-    })),
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Roanoke',
-      addressRegion: 'VA',
-      addressCountry: 'US',
-    },
-    knowsAbout: [
-      'Website development',
-      'Mobile app development',
-      'Process automation',
-      'iOS apps',
-      'Android apps',
-      'Custom software',
-    ],
-    serviceType: [
-      'Website development',
-      'Mobile app development',
-      'Process automation',
-      'Custom software development',
-    ],
-  },
-]
+export const viewport: Viewport = {
+  themeColor: '#F7F4EE',
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -78,7 +37,7 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.shortName, url: siteUrl }],
   creator: siteConfig.shortName,
   publisher: siteConfig.shortName,
-  category: 'Business',
+  category: 'Technology',
   robots: {
     index: true,
     follow: true,
@@ -87,10 +46,8 @@ export const metadata: Metadata = {
       follow: true,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      'max-video-preview': -1,
     },
-  },
-  alternates: {
-    canonical: '/',
   },
   openGraph: {
     type: 'website',
@@ -114,11 +71,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${sans.variable} ${serif.variable}`}>
-      <head>
-        <JsonLd data={structuredData} />
-      </head>
       <body className="font-sans antialiased bg-paper text-ink">
+        <JsonLd data={siteJsonLd()} />
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <Nav />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

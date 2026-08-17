@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { siteConfig } from '@/lib/site'
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -56,9 +57,9 @@ export default function Contact() {
           <p className="text-[17px] leading-relaxed text-mute mb-8">
             I reply within one business day. Call or email if that is easier.
           </p>
-          <div className="space-y-3 text-[15px]">
-            <a href="tel:5408354896" className="block text-ink hover:text-navy transition-colors">
-              540-835-4896
+          <address className="space-y-3 text-[15px] not-italic">
+            <a href={`tel:${siteConfig.phoneE164}`} className="block text-ink hover:text-navy transition-colors">
+              {siteConfig.phone}
             </a>
             <a
               href="mailto:mikemangialardi94@gmail.com"
@@ -66,8 +67,9 @@ export default function Contact() {
             >
               mikemangialardi94@gmail.com
             </a>
-            <p className="text-mute">Roanoke &amp; New River Valley, Virginia</p>
-          </div>
+            <p className="text-mute">Roanoke, Virginia</p>
+            <p className="text-mute">Serving the New River Valley and remote teams</p>
+          </address>
         </div>
 
         <div className="bg-white border border-line rounded-lg p-8">

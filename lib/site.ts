@@ -16,42 +16,95 @@ export const siteUrl = getSiteUrl()
 export const siteConfig = {
   name: 'Michael Mangialardi',
   shortName: 'Michael Mangialardi',
-  title: 'Michael Mangialardi, independent developer',
+  title: 'Michael Mangialardi | Websites, Apps, and Automation in Roanoke, VA',
   description:
-    'Independent developer in Roanoke, Virginia. I build websites, apps, and automations. You work with me directly.',
+    'Independent software developer in Roanoke and the New River Valley, Virginia. I build websites, iOS and Android apps, and process automations. You work with me directly.',
   locale: 'en_US',
   phone: '540-835-4896',
+  phoneE164: '+15408354896',
   email: 'mikemangialardi94@gmail.com',
+  jobTitle: 'Independent software developer',
+  location: {
+    locality: 'Roanoke',
+    region: 'VA',
+    regionName: 'Virginia',
+    country: 'US',
+  },
+  sameAs: ['https://github.com/michaelmang'],
   areaServed: [
     'Roanoke',
+    'Salem',
     'Christiansburg',
     'Blacksburg',
     'New River Valley',
-    'Salem',
     'Virginia',
   ],
   keywords: [
-    'independent software developer',
-    'website development Virginia',
-    'mobile app developer Roanoke',
-    'process automation',
-    'custom software',
-    'iOS and Android apps',
+    'software developer Roanoke VA',
+    'website developer Roanoke',
+    'iOS app developer Virginia',
+    'Android app developer',
+    'process automation Virginia',
+    'independent software developer New River Valley',
+    'custom website development Roanoke',
+    'mobile app developer Blacksburg',
+    'freelance developer Christiansburg',
   ],
 }
 
-export const projects = [
+export type ProjectLink = {
+  label: string
+  href: string
+}
+
+export type Project = {
+  slug: string
+  name: string
+  client: string
+  platforms: string
+  operatingSystem: string
+  applicationCategory: string
+  summary: string
+  details: string
+  features: string[]
+  seoTitle: string
+  seoDescription: string
+  icon: string
+  screenshot: string
+  screenshotAlt: string
+  screenshotWidth: number
+  screenshotHeight: number
+  links: ProjectLink[]
+}
+
+export const projects: Project[] = [
   {
+    slug: 'monergism-ebook-library',
     name: 'Monergism eBook Library',
     client: 'Christian Publication Resource Foundation',
     platforms: 'iOS',
+    operatingSystem: 'iOS',
+    applicationCategory: 'LifestyleApplication',
     summary:
       'A free iOS library of 1,700+ classic Reformed and biblical works. Readers can browse, download, highlight, and listen.',
     details:
-      'Search by author or title, pick up where you left off, keep notes, and download books for offline use. Audio is available for selected works.',
+      'The Monergism eBook Library is on the App Store as a reading app for pastors, students, and anyone who wants this catalog on a phone. I built the iOS app for the Christian Publication Resource Foundation.',
+    features: [
+      'Browse and search by author, category, or title',
+      'Download books for offline reading',
+      'Notes and highlights',
+      'Audio for selected works',
+      'Resume reading from the last place you stopped',
+    ],
+    seoTitle: 'Monergism eBook Library | iOS App by Michael Mangialardi',
+    seoDescription:
+      'iOS app for the Monergism eBook Library: 1,700+ classic Reformed and biblical works, with offline reading, notes, highlights, and audio. Built by Michael Mangialardi in Roanoke, Virginia.',
     icon: '/work/monergism-icon.png',
     screenshot: '/work/monergism-home.jpg',
-    screenshotAlt: 'Monergism eBook Library home screen',
+    screenshotAlt:
+      'Monergism eBook Library iOS home screen showing Continue reading, New Releases, and an audio player',
+    screenshotWidth: 1284,
+    screenshotHeight: 2778,
     links: [
       {
         label: 'App Store',
@@ -60,16 +113,31 @@ export const projects = [
     ],
   },
   {
+    slug: 'kalam',
     name: 'Kalam',
     client: 'Gratia Tech',
     platforms: 'iOS, Android, and web',
+    operatingSystem: 'iOS, Android',
+    applicationCategory: 'LifestyleApplication',
     summary:
       'An Arabic library app for reading and listening. Daily plans, saved progress, offline access, and audio.',
     details:
-      'Built for Arabic from the start. The website and the apps are the same product.',
+      'Kalam is a library product for Arabic readers. The iOS app, Android app, and website at kalam.app are one product. I built them for Gratia Tech.',
+    features: [
+      'Reading and listening in Arabic',
+      'Daily plans and saved progress',
+      'Offline access',
+      'Audio playback',
+      'Website and apps that share the same library',
+    ],
+    seoTitle: 'Kalam | Arabic Library App by Michael Mangialardi',
+    seoDescription:
+      'Kalam is an Arabic library app for reading and listening, on iOS, Android, and the web. Daily plans, offline access, and audio. Built by Michael Mangialardi.',
     icon: '/work/kalam-icon.png',
     screenshot: '/work/kalam-home.jpg',
-    screenshotAlt: 'Kalam app home screen',
+    screenshotAlt: 'Kalam iOS home screen with an Arabic library, daily goal, and continue reading',
+    screenshotWidth: 1284,
+    screenshotHeight: 2778,
     links: [
       { label: 'kalam.app', href: 'https://kalam.app/en/' },
       {
@@ -83,3 +151,30 @@ export const projects = [
     ],
   },
 ]
+
+export const faqs = [
+  {
+    question: 'What kind of work do you take on?',
+    answer:
+      'Websites, iOS and Android apps, and automations that connect software to daily processes. Recent work includes library apps on the App Store and Google Play.',
+  },
+  {
+    question: 'Where are you based?',
+    answer:
+      'Roanoke, Virginia. I work with people in the New River Valley, including Blacksburg and Christiansburg, and with teams farther away.',
+  },
+  {
+    question: 'Do I work with you or with an agency?',
+    answer:
+      'You work with me directly. There is no account manager and no agency layer between you and the build.',
+  },
+  {
+    question: 'How do projects move?',
+    answer:
+      'I keep communication open and ship in short cycles, so you can see something working early and give feedback as we go.',
+  },
+]
+
+export function getProject(slug: string) {
+  return projects.find((project) => project.slug === slug)
+}

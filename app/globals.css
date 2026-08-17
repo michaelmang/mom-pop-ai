@@ -17,6 +17,11 @@ body {
   overflow-x: hidden;
 }
 
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60]
+         focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm;
+}
+
 .form-input {
   @apply w-full bg-white border border-line rounded-md px-4 py-3 text-ink placeholder:text-stone-400
          focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy/30 transition-colors duration-150;
