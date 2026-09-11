@@ -1,9 +1,4 @@
-import Hero from '@/components/Hero'
-import Work from '@/components/Work'
-import Approach from '@/components/Approach'
-import About from '@/components/About'
-import Faq from '@/components/Faq'
-import Contact from '@/components/Contact'
+import PersonaContent from '@/components/PersonaContent'
 import JsonLd from '@/components/JsonLd'
 import { homeJsonLd } from '@/lib/seo'
 import { siteConfig } from '@/lib/site'
@@ -24,12 +19,7 @@ export default function Home() {
   return (
     <main id="main">
       <JsonLd data={homeJsonLd()} />
-      <Hero />
-      <Work />
-      <Approach />
-      <About />
-      <Faq />
-      <Contact />
+      <PersonaContent />
     </main>
   )
 }

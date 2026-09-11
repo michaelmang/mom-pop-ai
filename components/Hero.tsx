@@ -1,31 +1,20 @@
 export default function Hero() {
   return (
-    <section className="min-h-[88vh] flex flex-col justify-center px-6 pt-28 pb-20">
+    <section className="min-h-[72vh] flex flex-col justify-center px-6 pt-28 pb-16">
       <div className="max-w-5xl mx-auto w-full">
-        <p className="text-[13px] font-semibold tracking-[0.14em] uppercase text-mute mb-6">
-          Independent software developer · Virginia
-        </p>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.4] tracking-tight text-ink max-w-3xl mb-8">
-          I build websites, apps, and automations.
-        </h1>
-        <p className="text-lg sm:text-xl leading-relaxed text-mute max-w-2xl mb-10">
-          I live in the Blacksburg and Christiansburg (New River Valley) area, near Roanoke. Local and remote
-          work are both fine. You work with me directly. We keep communication
-          open, and we move quickly.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <a
-            href="#contact"
-            className="inline-flex items-center px-5 py-2.5 rounded-md bg-navy hover:bg-navy-hover text-white text-[15px] font-semibold transition-colors"
-          >
-            Get in touch
-          </a>
-          <a
-            href="#work"
-            className="inline-flex items-center px-5 py-2.5 rounded-md border border-line hover:border-ink/30 text-ink text-[15px] font-semibold transition-colors"
-          >
-            Work
-          </a>
+        <div className="glass rounded-3xl px-7 py-9 sm:px-10 sm:py-12 w-full text-center animate-fade-up">
+          <h1 className="font-serif text-[2.2rem] sm:text-5xl lg:text-[3.4rem] leading-[1.22] tracking-[-0.01em] text-ink mb-8 mx-auto max-w-3xl">
+            Michael crafts software applications for mobile and web.
+          </h1>
+          <div className="space-y-2 mx-auto max-w-2xl">
+            <p className="text-[17px] sm:text-lg leading-relaxed text-mute">
+              Designer, engineer, and digital hummingbird
+            </p>
+            <p className="text-[17px] sm:text-lg leading-relaxed text-mute">
+              Currently exploring mobile ebook readers and corpus-wide passage
+              retrieval
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -15,45 +15,43 @@ export default function Image() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          background: '#F7F4EE',
+          background: '#161616',
           padding: '72px 80px',
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: 20,
-            fontWeight: 600,
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase',
-            color: '#57534E',
-            marginBottom: 28,
-          }}
-        >
-          Selected work · Virginia
-        </div>
-        <div
-          style={{
-            display: 'flex',
             fontSize: 64,
             fontWeight: 600,
-            lineHeight: 1.4,
-            color: '#1C1917',
+            lineHeight: 1.25,
+            color: '#EDEAE6',
             letterSpacing: '-0.02em',
             maxWidth: 980,
           }}
         >
-          Products I have built.
+          Work
         </div>
         <div
           style={{
             display: 'flex',
             marginTop: 36,
             fontSize: 26,
-            color: '#57534E',
+            color: '#A09B95',
           }}
         >
           Monergism eBook Library and Kalam
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            marginTop: 40,
+            fontSize: 22,
+            fontWeight: 600,
+            color: '#E25A9A',
+          }}
+        >
+          Michael Mangialardi
         </div>
       </div>
     ),

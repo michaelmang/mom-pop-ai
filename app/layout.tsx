@@ -1,27 +1,29 @@
 import type { Metadata, Viewport } from 'next'
-import { Source_Sans_3, Source_Serif_4 } from 'next/font/google'
+import { DM_Sans, Fraunces } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import JsonLd from '@/components/JsonLd'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import SiteBackground from '@/components/SiteBackground'
+import { PersonaProvider } from '@/components/PersonaProvider'
 import { siteJsonLd } from '@/lib/seo'
 import { siteConfig, siteUrl, isPreviewDeployment } from '@/lib/site'
 import './globals.css'
 
-const sans = Source_Sans_3({
+const sans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 })
 
-const serif = Source_Serif_4({
+const serif = Fraunces({
   subsets: ['latin'],
   variable: '--font-serif',
   display: 'swap',
 })
 
 export const viewport: Viewport = {
-  themeColor: '#F7F4EE',
+  themeColor: '#0c0c0c',
   width: 'device-width',
   initialScale: 1,
 }
@@ -78,9 +80,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <Nav />
-        {children}
-        <Footer />
+        <PersonaProvider>
+          <SiteBackground />
+          <Nav />
+          {children}
+          <Footer />
+        </PersonaProvider>
         <Analytics />
       </body>
     </html>

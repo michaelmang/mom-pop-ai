@@ -19,7 +19,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          background: '#F7F4EE',
+          background: '#161616',
           padding: '72px 80px',
         }}
       >
@@ -30,19 +30,19 @@ export default async function Image({ params }: { params: { slug: string } }) {
             fontWeight: 600,
             letterSpacing: '0.14em',
             textTransform: 'uppercase',
-            color: '#57534E',
+            color: '#A09B95',
             marginBottom: 28,
           }}
         >
-          {subtitle} · Built by Michael Mangialardi
+          {subtitle}
         </div>
         <div
           style={{
             display: 'flex',
             fontSize: 64,
             fontWeight: 600,
-            lineHeight: 1.4,
-            color: '#1C1917',
+            lineHeight: 1.25,
+            color: '#EDEAE6',
             letterSpacing: '-0.02em',
             maxWidth: 980,
           }}
@@ -53,12 +53,12 @@ export default async function Image({ params }: { params: { slug: string } }) {
           style={{
             display: 'flex',
             marginTop: 36,
-            fontSize: 24,
-            color: '#1E3A5F',
+            fontSize: 22,
+            color: '#E25A9A',
             fontWeight: 600,
           }}
         >
-          Virginia
+          Michael Mangialardi
         </div>
       </div>
     ),

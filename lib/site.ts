@@ -16,9 +16,9 @@ export const isPreviewDeployment = process.env.VERCEL_ENV === 'preview'
 export const siteConfig = {
   name: 'Michael Mangialardi',
   shortName: 'Michael Mangialardi',
-  title: 'Michael Mangialardi | Websites, Apps, and Automation',
+  title: 'Michael Mangialardi | Software for mobile and web',
   description:
-    'Independent software developer in Blacksburg, Virginia, near Roanoke. I build websites, iOS and Android apps, and process automations. Local and remote.',
+    'Michael crafts software applications for mobile and web. Designer, engineer, and digital hummingbird exploring mobile ebook readers and corpus-wide passage retrieval from Virginia.',
   locale: 'en_US',
   phone: '540-835-4896',
   phoneE164: '+15408354896',
@@ -75,6 +75,7 @@ export type Project = {
   screenshotWidth: number
   screenshotHeight: number
   links: ProjectLink[]
+  upcoming?: boolean
 }
 
 export const projects: Project[] = [
@@ -82,13 +83,13 @@ export const projects: Project[] = [
     slug: 'monergism-ebook-library',
     name: 'Monergism eBook Library',
     client: 'Christian Publication Resource Foundation',
-    platforms: 'iOS',
-    operatingSystem: 'iOS',
+    platforms: 'iOS and Android',
+    operatingSystem: 'iOS, Android',
     applicationCategory: 'LifestyleApplication',
     summary:
-      'A free iOS library of 1,700+ classic Reformed and biblical works. Readers can browse, download, highlight, and listen.',
+      'A free library of 1,700+ classic Reformed and biblical works on iOS and Android. Readers can browse, download, highlight, and listen.',
     details:
-      'The Monergism eBook Library is on the App Store as a reading app for pastors, students, and anyone who wants this catalog on a phone. I built the iOS app for the Christian Publication Resource Foundation.',
+      'The Monergism eBook Library is on the App Store and Google Play as a reading app for pastors, students, and anyone who wants this catalog on a phone. I built the apps for the Christian Publication Resource Foundation.',
     features: [
       'Browse and search by author, category, or title',
       'Download books for offline reading',
@@ -96,13 +97,13 @@ export const projects: Project[] = [
       'Audio for selected works',
       'Resume reading from the last place you stopped',
     ],
-    seoTitle: 'Monergism eBook Library | iOS App by Michael Mangialardi',
+    seoTitle: 'Monergism eBook Library | iOS & Android by Michael Mangialardi',
     seoDescription:
-      'iOS app for the Monergism eBook Library: 1,700+ classic Reformed and biblical works, with offline reading, notes, highlights, and audio. Built by Michael Mangialardi.',
+      'iOS and Android app for the Monergism eBook Library: 1,700+ classic Reformed and biblical works, with offline reading, notes, highlights, and audio. Built by Michael Mangialardi.',
     icon: '/work/monergism-icon.png',
     screenshot: '/work/monergism-home.jpg',
     screenshotAlt:
-      'Monergism eBook Library iOS home screen showing Continue reading, New Releases, and an audio player',
+      'Monergism eBook Library home screen showing Continue reading, New Releases, and an audio player',
     screenshotWidth: 1284,
     screenshotHeight: 2778,
     links: [
@@ -110,7 +111,39 @@ export const projects: Project[] = [
         label: 'App Store',
         href: 'https://apps.apple.com/gh/app/monergism-ebook-library/id6448814913',
       },
+      {
+        label: 'Google Play',
+        href: 'https://play.google.com/store/apps/details?id=com.cprf.monergism.ebooks.reader&hl=en_US',
+      },
     ],
+  },
+  {
+    slug: 'theology-witness',
+    name: 'Theology Witness',
+    client: '',
+    platforms: '',
+    operatingSystem: 'Web',
+    applicationCategory: 'LifestyleApplication',
+    summary:
+      'Sophisticated semantic search on top of the Monergism corpus. Returns passages from original sources to witness to strong theological content without AI admixture.',
+    details:
+      'Theology Witness is an upcoming product for corpus-wide passage retrieval over the Monergism library. It surfaces original-source passages rather than generated summaries.',
+    features: [
+      'Semantic search across the Monergism corpus',
+      'Passages returned from original sources',
+      'Witness-mode retrieval without AI admixture',
+    ],
+    seoTitle: 'Theology Witness | Upcoming product by Michael Mangialardi',
+    seoDescription:
+      'Theology Witness — semantic search over the Monergism corpus that returns original-source passages without AI admixture. Built by Michael Mangialardi.',
+    icon: '/work/theology-witness-icon.png',
+    screenshot: '/work/theology-witness-home.jpg',
+    screenshotAlt:
+      'Theology Witness search for What did the Puritans teach about assurance, powered by Monergism',
+    screenshotWidth: 1400,
+    screenshotHeight: 687,
+    links: [],
+    upcoming: true,
   },
   {
     slug: 'kalam',
@@ -120,58 +153,33 @@ export const projects: Project[] = [
     operatingSystem: 'iOS, Android',
     applicationCategory: 'LifestyleApplication',
     summary:
-      'An Arabic library app for reading and listening. Daily plans, saved progress, offline access, and audio.',
+      'An Arabic library app for reading and listening. Readers can browse, download, highlight, and listen.',
     details:
-      'Kalam is a library product for Arabic readers. The iOS app, Android app, and website at kalam.app are one product. I built them for Gratia Tech.',
+      'Kalam is a library product for Arabic readers on iOS, Android, and the web. I built them for Gratia Tech.',
     features: [
       'Reading and listening in Arabic',
-      'Daily plans and saved progress',
+      'Browse, download, highlight, and listen',
       'Offline access',
       'Audio playback',
-      'Website and apps that share the same library',
     ],
     seoTitle: 'Kalam | Arabic Library App by Michael Mangialardi',
     seoDescription:
-      'Kalam is an Arabic library app for reading and listening, on iOS, Android, and the web. Daily plans, offline access, and audio. Built by Michael Mangialardi.',
+      'Kalam is an Arabic library app for reading and listening. Readers can browse, download, highlight, and listen. Built by Michael Mangialardi.',
     icon: '/work/kalam-icon.png',
-    screenshot: '/work/kalam-home.jpg',
-    screenshotAlt: 'Kalam iOS home screen with an Arabic library, daily goal, and continue reading',
-    screenshotWidth: 1284,
-    screenshotHeight: 2778,
+    screenshot: '/work/kalam-home.png',
+    screenshotAlt: 'Kalam Library screen with Arabic and English book covers',
+    screenshotWidth: 415,
+    screenshotHeight: 900,
     links: [
-      { label: 'kalam.app', href: 'https://kalam.app/en/' },
       {
         label: 'App Store',
-        href: 'https://apps.apple.com/app/id6777661165',
+        href: 'https://apps.apple.com/us/app/kalam-app-%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D9%83%D9%84%D8%A7%D9%85/id6777661165',
       },
       {
         label: 'Google Play',
         href: 'https://play.google.com/store/apps/details?id=com.gratiatech.kalam',
       },
     ],
-  },
-]
-
-export const faqs = [
-  {
-    question: 'What kind of work do you take on?',
-    answer:
-      'Websites, iOS and Android apps, and automations that connect software to daily processes. Recent work includes library apps on the App Store and Google Play.',
-  },
-  {
-    question: 'Where are you based?',
-    answer:
-      'Blacksburg and Christiansburg, Virginia, near Roanoke. I work with people nearby and with remote clients.',
-  },
-  {
-    question: 'Do I work with you or with an agency?',
-    answer:
-      'You work with me directly. There is no account manager and no agency layer between you and the build.',
-  },
-  {
-    question: 'How do projects move?',
-    answer:
-      'I keep communication open and ship in short cycles, so you can see something working early and give feedback as we go.',
   },
 ]
 

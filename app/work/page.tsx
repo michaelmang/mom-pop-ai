@@ -9,12 +9,12 @@ import { projects, siteUrl } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Websites, iOS apps, and Android apps I have built, including the Monergism eBook Library and Kalam. Independent software work from Virginia.',
+    'Websites, iOS apps, and Android apps I have built, including the Monergism eBook Library, Theology Witness, and Kalam.',
   alternates: { canonical: '/work' },
   openGraph: {
     title: 'Work | Michael Mangialardi',
     description:
-      'Websites, iOS apps, and Android apps I have built, including the Monergism eBook Library and Kalam.',
+      'Websites, iOS apps, and Android apps I have built, including the Monergism eBook Library, Theology Witness, and Kalam.',
     url: `${siteUrl}/work`,
     type: 'website',
   },
@@ -25,42 +25,44 @@ export default function WorkIndexPage() {
     <main id="main" className="px-6 pt-28 pb-24">
       <JsonLd data={workIndexJsonLd()} />
       <div className="max-w-5xl mx-auto">
-        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Work' }]} />
-        <p className="text-[13px] font-semibold tracking-[0.14em] uppercase text-mute mb-3">
-          Work
-        </p>
-        <h1 className="font-serif text-4xl sm:text-5xl leading-[1.4] tracking-tight text-ink max-w-3xl mb-6">
-          Products I have built.
-        </h1>
-        <p className="text-lg leading-relaxed text-mute max-w-2xl mb-16">
-          Two library apps now in people&apos;s hands: an iOS catalog of 1,700+ books,
-          and an Arabic reading and listening app on iOS, Android, and the web.
-        </p>
+        <div className="glass rounded-3xl p-7 sm:p-10 mb-8">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Work' }]} />
+          <h1 className="font-serif text-4xl sm:text-5xl leading-[1.25] tracking-tight text-ink max-w-3xl mb-4">
+            Work
+          </h1>
+          <p className="text-lg leading-relaxed text-mute max-w-2xl">
+            Library apps and corpus search products now in people&apos;s hands —
+            and one upcoming.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project) => (
-            <article key={project.slug} className="border border-line rounded-lg p-6 bg-white">
+            <article key={project.slug} className="glass rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Image
                   src={project.icon}
                   alt=""
                   width={40}
                   height={40}
-                  className="w-10 h-10 rounded-lg"
+                  className="w-10 h-10 rounded-lg ring-1 ring-white/10"
                 />
                 <div>
                   <h2 className="font-serif text-xl text-ink">
-                    <Link href={`/work/${project.slug}`} className="hover:text-navy">
+                    <Link href={`/work/${project.slug}`} className="hover:text-rose transition-colors">
                       {project.name}
                     </Link>
                   </h2>
-                  <p className="text-sm text-mute">{project.platforms}</p>
+                  <p className="text-sm text-mute">
+                    {project.platforms}
+                    {project.upcoming ? ' · Upcoming' : ''}
+                  </p>
                 </div>
               </div>
               <p className="text-[15px] leading-relaxed text-mute mb-4">{project.summary}</p>
               <Link
                 href={`/work/${project.slug}`}
-                className="text-[15px] font-semibold text-navy hover:underline underline-offset-4"
+                className="text-[15px] font-medium text-rose hover:text-rose-soft transition-colors"
               >
                 More about {project.name}
               </Link>

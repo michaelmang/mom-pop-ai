@@ -1,4 +1,4 @@
-import { faqs, projects, siteConfig, siteUrl, type Project } from '@/lib/site'
+import { projects, siteConfig, siteUrl, type Project } from '@/lib/site'
 
 const personId = `${siteUrl}/#person`
 const businessId = `${siteUrl}/#business`
@@ -156,21 +156,6 @@ export function softwareJsonLd(project: Project) {
   }
 }
 
-export function faqJsonLd() {
-  return {
-    '@type': 'FAQPage',
-    '@id': `${siteUrl}/#faq`,
-    mainEntity: faqs.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  }
-}
-
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {
     '@type': 'BreadcrumbList',
@@ -193,7 +178,7 @@ export function siteJsonLd() {
 export function homeJsonLd() {
   return {
     '@context': 'https://schema.org',
-    '@graph': [faqJsonLd(), ...projects.map(softwareJsonLd)],
+    '@graph': projects.map(softwareJsonLd),
   }
 }
 

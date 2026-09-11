@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: 'Source Sans 3', system-ui, sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
 }
 
 html {
@@ -12,27 +12,49 @@ html {
 }
 
 body {
-  background-color: #F7F4EE;
-  color: #1C1917;
+  background-color: #0c0c0c;
+  color: #F4F0E8;
   overflow-x: hidden;
 }
 
 .skip-link {
   @apply sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60]
-         focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm;
+         focus:bg-white/90 focus:text-ink focus:px-4 focus:py-2 focus:rounded-md focus:text-sm;
 }
 
-.form-input {
-  @apply w-full bg-white border border-line rounded-md px-4 py-3 text-ink placeholder:text-stone-400
-         focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy/30 transition-colors duration-150;
+.glass {
+  background: rgba(18, 16, 14, 0.48);
+  border: 1px solid rgba(255, 248, 235, 0.16);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 18px 50px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+.glass-soft {
+  background: rgba(20, 18, 16, 0.34);
+  border: 1px solid rgba(255, 248, 235, 0.12);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 12px 36px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
 }
 
 ::selection {
-  background: #1E3A5F;
-  color: #F7F4EE;
+  background: #E25A9A;
+  color: #161616;
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #F7F4EE; }
-::-webkit-scrollbar-thumb { background: #D6D1C6; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #C4BDB0; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.22); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in {
+    animation: none !important;
+  }
+}

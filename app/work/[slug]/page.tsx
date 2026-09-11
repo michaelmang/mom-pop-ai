@@ -49,7 +49,7 @@ export default function ProjectPage({ params }: Props) {
   return (
     <main id="main" className="px-6 pt-28 pb-24">
       <JsonLd data={projectJsonLd(project)} />
-      <article className="max-w-5xl mx-auto">
+      <article className="max-w-5xl mx-auto glass rounded-3xl p-7 sm:p-10">
         <Breadcrumb
           items={[
             { label: 'Home', href: '/' },
@@ -60,38 +60,47 @@ export default function ProjectPage({ params }: Props) {
 
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
           <div>
-            <p className="text-[13px] font-semibold tracking-[0.14em] uppercase text-mute mb-3">
-              {project.platforms} · {project.client}
-            </p>
-            <h1 className="font-serif text-4xl sm:text-5xl leading-[1.4] tracking-tight text-ink mb-6">
+            <h1 className="font-serif text-4xl sm:text-5xl leading-[1.25] tracking-tight text-ink">
               {project.name}
             </h1>
-            <p className="text-lg leading-relaxed text-mute mb-5">{project.details}</p>
+            {project.upcoming && (
+              <p className="text-[11px] uppercase tracking-[0.14em] text-[#C4A574] font-semibold mt-2">
+                Upcoming
+              </p>
+            )}
+            {(project.platforms || project.client) && (
+              <p className="text-[13px] font-medium tracking-[0.14em] uppercase text-mute mt-3">
+                {[project.platforms, project.client].filter(Boolean).join(' · ')}
+              </p>
+            )}
+            <p className="text-lg leading-relaxed text-mute mt-6 mb-5">{project.details}</p>
             <p className="text-[17px] leading-relaxed text-ink/90 mb-8">{project.summary}</p>
 
             <h2 className="font-serif text-2xl text-ink mb-4">What it includes</h2>
             <ul className="space-y-2 mb-10">
               {project.features.map((feature) => (
                 <li key={feature} className="flex gap-3 text-[15px] leading-relaxed text-mute">
-                  <span className="mt-2 h-1 w-1 rounded-full bg-navy shrink-0" aria-hidden />
+                  <span className="mt-2 h-1 w-1 rounded-full bg-rose shrink-0" aria-hidden />
                   {feature}
                 </li>
               ))}
             </ul>
 
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              {project.links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[15px] font-semibold text-navy hover:underline underline-offset-4"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+            {project.links.length > 0 && (
+              <div className="flex flex-wrap gap-x-5 gap-y-2">
+                {project.links.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[15px] font-medium text-rose hover:text-rose-soft transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="mx-auto w-full max-w-[280px] md:mx-0 md:justify-self-end">
@@ -101,7 +110,7 @@ export default function ProjectPage({ params }: Props) {
               width={project.screenshotWidth}
               height={project.screenshotHeight}
               priority
-              className="w-full h-auto rounded-[2rem] shadow-[0_20px_40px_-16px_rgba(28,25,23,0.35)] ring-1 ring-black/10"
+              className="w-full h-auto rounded-[2rem] shadow-[0_24px_48px_-18px_rgba(0,0,0,0.65)] ring-1 ring-white/10"
             />
           </div>
         </div>
