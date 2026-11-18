@@ -1,20 +1,54 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
+import { previewPath } from '@/lib/preview'
+import { serviceArea } from '@/lib/services'
 import { siteConfig } from '@/lib/site'
 
 export default function Footer() {
+  const isPreview = usePathname() === previewPath
+
   return (
     <footer className="px-6 pb-12">
       <div className="max-w-5xl mx-auto w-full">
         <div className="glass-soft rounded-2xl px-6 py-6 sm:px-8 w-full text-center">
           <p className="font-serif text-[17px] text-ink">{siteConfig.name}</p>
-          <p className="text-sm text-mute mt-1">
-            Designer, engineer, and digital hummingbird in Virginia.
-          </p>
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="inline-block mt-3 text-sm text-mute hover:text-ink transition-colors"
-          >
-            {siteConfig.email}
-          </a>
+          {isPreview ? (
+            <>
+              <p className="text-sm text-mute mt-1">
+                Digital Handyman serving {serviceArea}
+              </p>
+              <p className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-sm text-mute whitespace-nowrap">
+                <a
+                  href={`tel:${siteConfig.phoneE164}`}
+                  className="hover:text-ink transition-colors"
+                >
+                  {siteConfig.phone}
+                </a>
+                <span className="hidden sm:inline" aria-hidden>
+                  ·
+                </span>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="hover:text-ink transition-colors"
+                >
+                  {siteConfig.email}
+                </a>
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-sm text-mute mt-1">
+                Designer, engineer, and digital hummingbird in Virginia.
+              </p>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="inline-block mt-3 text-sm text-mute hover:text-ink transition-colors"
+              >
+                {siteConfig.email}
+              </a>
+            </>
+          )}
         </div>
       </div>
     </footer>

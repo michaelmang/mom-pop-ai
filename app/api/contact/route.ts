@@ -13,7 +13,13 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY)
 
   try {
-    const { name, email, business, message } = await request.json()
+    const { name, email, business, service, message, contact_me_by_fax_only } =
+      await request.json()
+
+    // Hidden honeypot checkbox: only bots tick it, so drop the message quietly.
+    if (contact_me_by_fax_only) {
+      return NextResponse.json({ success: true })
+    }
 
     if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return NextResponse.json({ error: 'Name, email, and message are required.' }, { status: 400 })
@@ -28,11 +34,12 @@ export async function POST(request: Request) {
       from: 'Website Contact <onboarding@resend.dev>',
       to: siteConfig.email,
       replyTo: email,
-      subject: `New inquiry from ${name}${business ? ` (${business})` : ''}`,
+      subject: `New inquiry from ${name}${business ? ` (${business})` : ''}${service ? `: ${service}` : ''}`,
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
         `Organization: ${business || 'Not provided'}`,
+        `Needs: ${service || 'Not sure yet'}`,
         '',
         'Message:',
         message,

@@ -2,12 +2,49 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Logo from '@/components/Logo'
 import { getVisiblePersonas } from '@/lib/personas'
+import { previewPath } from '@/lib/preview'
 import { usePersona } from '@/components/PersonaProvider'
 import { siteConfig } from '@/lib/site'
 
+const previewLinks = [
+  { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#work' },
+  { label: 'Contact', href: '#contact' },
+]
+
+function PreviewLinks() {
+  return (
+    <>
+      <div className="hidden md:flex items-center gap-7">
+        {previewLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className="text-[15px] text-ink/80 hover:text-[#C4A574] transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <a href={`tel:${siteConfig.phoneE164}`} className="btn-gold px-4 py-2 text-[14px]">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path
+            d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"
+            fill="currentColor"
+          />
+        </svg>
+        <span className="sm:hidden">Call</span>
+        <span className="hidden sm:inline">{siteConfig.phone}</span>
+      </a>
+    </>
+  )
+}
+
 export default function Nav() {
+  const isPreview = usePathname() === previewPath
   const { persona, setPersona } = usePersona()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -46,7 +83,7 @@ export default function Nav() {
     >
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <Link
-          href="/"
+          href={isPreview ? previewPath : '/'}
           className="flex items-center min-w-0 group animate-fade-in"
           aria-label="Michael Mangialardi home"
         >
@@ -54,7 +91,9 @@ export default function Nav() {
         </Link>
 
         <div className="flex items-center gap-6 md:gap-8 animate-fade-in [animation-delay:120ms] shrink-0">
-          {showPersonaMenu && (
+          {isPreview && <PreviewLinks />}
+
+          {showPersonaMenu && !isPreview && (
             <div className="relative" ref={menuRef}>
               <button
                 type="button"
@@ -111,12 +150,14 @@ export default function Nav() {
             </div>
           )}
 
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="hidden sm:inline text-[15px] text-ink/80 hover:text-[#C4A574] transition-colors"
-          >
-            Email
-          </a>
+          {!isPreview && (
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="hidden sm:inline text-[15px] text-ink/80 hover:text-[#C4A574] transition-colors"
+            >
+              Email
+            </a>
+          )}
         </div>
       </div>
     </nav>

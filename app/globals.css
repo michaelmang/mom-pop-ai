@@ -42,6 +42,22 @@ body {
   -webkit-backdrop-filter: blur(16px) saturate(130%);
 }
 
+/* In the components layer so utilities like px-4 can override them. */
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#C4A574] px-6 py-3
+           text-[15px] font-semibold text-[#161616] transition-colors hover:bg-[#D8BC8E]
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+           focus-visible:outline-[#C4A574] disabled:opacity-60 disabled:cursor-wait;
+  }
+
+  .btn-glass {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25
+           bg-white/[0.06] px-6 py-3 text-[15px] font-medium text-ink transition-colors
+           hover:bg-white/[0.12] hover:border-white/40;
+  }
+}
+
 ::selection {
   background: #E25A9A;
   color: #161616;
