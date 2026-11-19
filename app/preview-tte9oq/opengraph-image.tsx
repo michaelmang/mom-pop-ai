@@ -38,58 +38,40 @@ export default function Image() {
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
-            padding: '72px 90px',
-            background: 'rgba(12, 11, 10, 0.68)',
+            padding: '72px 110px',
+            background: 'rgba(12, 11, 10, 0.66)',
           }}
         >
           <div
             style={{
               display: 'flex',
-              fontSize: 22,
+              fontSize: 60,
               fontWeight: 600,
-              letterSpacing: '0.16em',
-              textTransform: 'uppercase',
-              color: '#C4A574',
-            }}
-          >
-            Digital Handyman · New River Valley, Virginia
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              marginTop: 30,
-              fontSize: 66,
-              fontWeight: 600,
-              lineHeight: 1.18,
+              lineHeight: 1.22,
               letterSpacing: '-0.02em',
               color: '#F4F0E8',
             }}
           >
-            From quick fixes to custom software.
+            Michael is a digital handyman for businesses in the New River Valley.
           </div>
           <div
             style={{
               display: 'flex',
-              marginTop: 30,
-              fontSize: 26,
-              lineHeight: 1.45,
-              color: 'rgba(244, 240, 232, 0.78)',
-              maxWidth: 940,
+              marginTop: 40,
+              width: 360,
+              height: 3,
+              background: 'rgba(244, 240, 232, 0.85)',
             }}
-          >
-            Websites, Google listings, SEO, ads, and print for local businesses, plus custom
-            apps, automation, and AI integrations for clients anywhere.
-          </div>
+          />
           <div
             style={{
               display: 'flex',
-              marginTop: 44,
-              fontSize: 24,
-              fontWeight: 600,
-              color: '#C4A574',
+              marginTop: 36,
+              fontSize: 28,
+              color: 'rgba(244, 240, 232, 0.9)',
             }}
           >
-            {siteConfig.name} · {siteConfig.phone}
+            {siteConfig.phone} · michaelmang.com
           </div>
         </div>
       </div>

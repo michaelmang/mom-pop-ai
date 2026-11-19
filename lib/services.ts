@@ -1,6 +1,8 @@
 export type Service = {
   name: string
   description: string
+  /** An outside reference the service follows, linked under the description. */
+  basis?: { label: string; href: string }
 }
 
 /** Matches the service area on the Google Business Profile. */
@@ -9,11 +11,19 @@ export const serviceArea = 'Radford, Christiansburg, Blacksburg, and the New Riv
 export const everydayServices: Service[] = [
   { name: 'Websites', description: 'New sites, redesigns, and updates.' },
   {
-    name: 'Google Business Profile',
-    description: 'Setup, verification, photos, and upkeep.',
+    name: 'Google listings and SEO',
+    description: 'Setup, verification, and upkeep so nearby customers can find you.',
   },
-  { name: 'SEO', description: 'So nearby customers can find you.' },
   { name: 'Google Ads', description: 'Campaigns set up and managed.' },
+  {
+    name: 'Cybersecurity',
+    description:
+      'Ransomware protection: two-step sign-in, a record of your accounts and data, and a plan for when something goes wrong.',
+    basis: {
+      label: 'Based on the Blueprint Basics guide',
+      href: 'https://securityandtechnology.org/blueprint-basics/',
+    },
+  },
   {
     name: 'Flyers and print',
     description: 'Designed by hand, with no AI-generated art.',
