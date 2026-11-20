@@ -5,8 +5,10 @@ export default function HandymanHero() {
     <section className="min-h-[70vh] flex flex-col justify-center px-6 pt-28 pb-16">
       <div className="max-w-5xl mx-auto w-full">
         <div className="glass rounded-3xl px-7 py-9 sm:px-10 sm:py-12 w-full text-center animate-fade-up">
-          <h1 className="font-serif text-[2.2rem] sm:text-5xl lg:text-[3.4rem] leading-[1.22] tracking-[-0.01em] text-ink mx-auto max-w-3xl text-balance">
-            Michael is a digital handyman for businesses in the New River Valley.
+          <h1 className="font-serif text-[1.8rem] sm:text-4xl lg:text-[2.6rem] leading-[1.3] tracking-[-0.01em] text-ink mx-auto max-w-3xl text-balance">
+            Hi, I&rsquo;m Michael. I&rsquo;m a digital handyman in Virginia&rsquo;s New
+            River Valley and an experienced software engineer. I rapidly complete
+            high-quality digital projects.
           </h1>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href={`tel:${siteConfig.phoneE164}`} className="btn-gold w-full sm:w-auto">

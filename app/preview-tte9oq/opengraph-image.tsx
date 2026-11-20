@@ -45,20 +45,19 @@ export default function Image() {
           <div
             style={{
               display: 'flex',
-              fontSize: 60,
+              fontSize: 76,
               fontWeight: 600,
-              lineHeight: 1.22,
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.01em',
               color: '#F4F0E8',
             }}
           >
-            Michael is a digital handyman for businesses in the New River Valley.
+            {siteConfig.name}
           </div>
           <div
             style={{
               display: 'flex',
-              marginTop: 40,
-              width: 360,
+              marginTop: 28,
+              width: 420,
               height: 3,
               background: 'rgba(244, 240, 232, 0.85)',
             }}
@@ -66,9 +65,22 @@ export default function Image() {
           <div
             style={{
               display: 'flex',
-              marginTop: 36,
-              fontSize: 28,
-              color: 'rgba(244, 240, 232, 0.9)',
+              marginTop: 28,
+              fontSize: 32,
+              lineHeight: 1.35,
+              color: '#F4F0E8',
+              maxWidth: 900,
+            }}
+          >
+            Digital handyman and experienced software engineer in Virginia&rsquo;s New River
+            Valley
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              marginTop: 32,
+              fontSize: 26,
+              color: 'rgba(244, 240, 232, 0.8)',
             }}
           >
             {siteConfig.phone} · michaelmang.com

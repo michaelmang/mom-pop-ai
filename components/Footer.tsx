@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation'
 import { previewPath } from '@/lib/preview'
-import { serviceArea } from '@/lib/services'
 import { siteConfig } from '@/lib/site'
 
 export default function Footer() {
@@ -16,7 +15,8 @@ export default function Footer() {
           {isPreview ? (
             <>
               <p className="text-sm text-mute mt-1">
-                Digital Handyman serving {serviceArea}
+                Digital handyman and experienced software engineer in
+                Virginia&rsquo;s New River Valley serving small businesses
               </p>
               <p className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-sm text-mute whitespace-nowrap">
                 <a

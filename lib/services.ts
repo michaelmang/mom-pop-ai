@@ -1,59 +1,53 @@
 export type Service = {
   name: string
   description: string
-  /** An outside reference the service follows, linked under the description. */
-  basis?: { label: string; href: string }
 }
 
-/** Matches the service area on the Google Business Profile. */
-export const serviceArea = 'Radford, Christiansburg, Blacksburg, and the New River Valley'
-
 export const everydayServices: Service[] = [
-  { name: 'Websites', description: 'New sites, redesigns, and updates.' },
+  { name: 'Websites', description: 'New sites, redesigns, and updates' },
   {
     name: 'Google listings and SEO',
-    description: 'Setup, verification, and upkeep so nearby customers can find you.',
+    description: 'Organically draw visitors to your business and website',
   },
-  { name: 'Google Ads', description: 'Campaigns set up and managed.' },
+  { name: 'Google Ads', description: 'Target your audience to drive interaction' },
   {
     name: 'Cybersecurity',
     description:
-      'Ransomware protection: two-step sign-in, a record of your accounts and data, and a plan for when something goes wrong.',
-    basis: {
-      label: 'Based on the Blueprint Basics guide',
-      href: 'https://securityandtechnology.org/blueprint-basics/',
-    },
+      "I’ll protect your small business and customers by securing your devices, software, and accounts",
   },
   {
     name: 'Flyers and print',
-    description: 'Designed by hand, with no AI-generated art.',
+    description: "I provide designs that’ll distinguish you from AI slop",
   },
   {
     name: 'Everything else digital',
-    description: 'Domains, email, and whatever broke.',
+    description: 'I can solve any other digital problem',
   },
 ]
 
 export const buildServices: Service[] = [
   {
     name: 'Software applications',
-    description: 'Web apps and internal tools built around how you work.',
+    description:
+      'Web and desktop applications to sell as a product or automate your business processes',
   },
   {
     name: 'Mobile apps',
-    description: 'iOS and Android apps, published to the App Store and Google Play.',
+    description: 'iOS and Android apps to create mobile products for customers',
   },
   {
     name: 'Business automation',
-    description: 'Getting the tools you already pay for to work together.',
+    description:
+      'I can slash your costs, remove your bottlenecks, and give you time back to advance your business through software integrations',
   },
   {
     name: 'AI integrations',
     description:
-      'MCP servers that let ChatGPT, Claude, and other assistants work with your data and tools.',
+      'I can integrate secure AI workflows that scale your business without complicating coordination',
   },
   {
-    name: 'Search engines',
-    description: 'Search across your catalog, documents, or archive.',
+    name: 'Custom search engines',
+    description:
+      'I build search engines that find relevant information across your documents and other artifacts, eliminating the scavenger hunt in your business processes',
   },
 ]

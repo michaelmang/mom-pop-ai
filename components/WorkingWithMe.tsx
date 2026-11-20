@@ -4,10 +4,10 @@ export default function WorkingWithMe() {
       <div className="max-w-5xl mx-auto w-full">
         <div className="glass-soft rounded-3xl px-7 py-9 sm:px-10 sm:py-10 w-full text-center">
           <p className="text-[17px] sm:text-lg leading-relaxed text-ink/90 mx-auto max-w-3xl">
-            I bring 10 years of experience in software engineering, enriched by
-            organizational leadership, product management, and entrepreneurial
-            zeal. I work directly with owners and offer rapid responsiveness and
-            delivery.
+            With 10 years of experience in software engineering, organizational
+            leadership, and product management, I can tackle both simple and
+            complex projects, working directly with business stakeholders to
+            offer rapid responsiveness and delivery.
           </p>
         </div>
       </div>
