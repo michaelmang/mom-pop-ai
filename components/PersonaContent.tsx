@@ -1,10 +1,12 @@
 'use client'
 
-import Hero from '@/components/Hero'
+import HandymanHero from '@/components/HandymanHero'
+import Services from '@/components/Services'
 import ConsultingWork from '@/components/ConsultingWork'
+import WorkingWithMe from '@/components/WorkingWithMe'
+import Contact from '@/components/Contact'
 import Research from '@/components/Research'
 import Studio from '@/components/Studio'
-import Closing from '@/components/Closing'
 import { usePersona } from '@/components/PersonaProvider'
 
 export default function PersonaContent() {
@@ -13,9 +15,11 @@ export default function PersonaContent() {
   if (persona === 'consulting') {
     return (
       <>
-        <Hero />
+        <HandymanHero />
+        <Services />
         <ConsultingWork />
-        <Closing />
+        <WorkingWithMe />
+        <Contact />
       </>
     )
   }

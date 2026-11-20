@@ -16,14 +16,14 @@ export const isPreviewDeployment = process.env.VERCEL_ENV === 'preview'
 export const siteConfig = {
   name: 'Michael Mangialardi',
   shortName: 'Michael Mangialardi',
-  title: 'Michael Mangialardi | Software for mobile and web',
+  title: 'Michael Mangialardi | Digital Handyman in the New River Valley',
   description:
-    'Michael crafts software applications for mobile and web. Designer, engineer, and digital hummingbird exploring mobile ebook readers and corpus-wide passage retrieval from Virginia.',
+    'Websites, Google listings, ads, cybersecurity, and print for New River Valley businesses, plus custom apps, automation, and AI integrations for clients anywhere.',
   locale: 'en_US',
   phone: '540-835-4896',
   phoneE164: '+15408354896',
   email: 'mikemangialardi94@gmail.com',
-  jobTitle: 'Independent software developer',
+  jobTitle: 'Digital handyman and software engineer',
   location: {
     locality: 'Blacksburg',
     region: 'VA',
@@ -31,24 +31,28 @@ export const siteConfig = {
     country: 'US',
   },
   sameAs: ['https://github.com/michaelmang'],
+  // Matches the service area on the Google Business Profile, plus remote builds.
   areaServed: [
-    'Blacksburg',
+    'Radford',
     'Christiansburg',
-    'Roanoke',
-    'Salem',
+    'Blacksburg',
+    'New River Valley',
     'Virginia',
     'United States',
   ],
   keywords: [
-    'software developer Blacksburg VA',
-    'website developer Christiansburg',
-    'iOS app developer Virginia',
-    'Android app developer',
-    'process automation Virginia',
-    'remote software developer',
-    'custom website development Roanoke',
+    'digital handyman New River Valley',
+    'website design Radford VA',
+    'website design Christiansburg',
+    'Google Business Profile help Blacksburg',
+    'SEO New River Valley',
+    'Google Ads management Virginia',
+    'small business cybersecurity Virginia',
+    'flyer design Radford',
+    'custom software developer Virginia',
     'mobile app developer Blacksburg',
-    'freelance developer Christiansburg',
+    'business automation',
+    'MCP server developer',
   ],
 }
 
@@ -65,9 +69,6 @@ export type Project = {
   operatingSystem: string
   applicationCategory: string
   summary: string
-  details: string
-  features: string[]
-  seoTitle: string
   seoDescription: string
   icon: string
   screenshot: string
@@ -88,16 +89,6 @@ export const projects: Project[] = [
     applicationCategory: 'LifestyleApplication',
     summary:
       'A free library of 1,700+ classic Reformed and biblical works on iOS and Android. Readers can browse, download, highlight, and listen.',
-    details:
-      'The Monergism eBook Library is on the App Store and Google Play as a reading app for pastors, students, and anyone who wants this catalog on a phone. I built the apps for the Christian Publication Resource Foundation.',
-    features: [
-      'Browse and search by author, category, or title',
-      'Download books for offline reading',
-      'Notes and highlights',
-      'Audio for selected works',
-      'Resume reading from the last place you stopped',
-    ],
-    seoTitle: 'Monergism eBook Library | iOS & Android by Michael Mangialardi',
     seoDescription:
       'iOS and Android app for the Monergism eBook Library: 1,700+ classic Reformed and biblical works, with offline reading, notes, highlights, and audio. Built by Michael Mangialardi.',
     icon: '/work/monergism-icon.png',
@@ -126,14 +117,6 @@ export const projects: Project[] = [
     applicationCategory: 'LifestyleApplication',
     summary:
       'Sophisticated semantic search on top of the Monergism corpus. Returns passages from original sources to witness to strong theological content without AI admixture.',
-    details:
-      'Theology Witness is an upcoming product for corpus-wide passage retrieval over the Monergism library. It surfaces original-source passages rather than generated summaries.',
-    features: [
-      'Semantic search across the Monergism corpus',
-      'Passages returned from original sources',
-      'Witness-mode retrieval without AI admixture',
-    ],
-    seoTitle: 'Theology Witness | Upcoming product by Michael Mangialardi',
     seoDescription:
       'Theology Witness — semantic search over the Monergism corpus that returns original-source passages without AI admixture. Built by Michael Mangialardi.',
     icon: '/work/theology-witness-icon.png',
@@ -154,15 +137,6 @@ export const projects: Project[] = [
     applicationCategory: 'LifestyleApplication',
     summary:
       'An Arabic library app for reading and listening. Readers can browse, download, highlight, and listen.',
-    details:
-      'Kalam is a library product for Arabic readers on iOS, Android, and the web. I built them for Gratia Tech.',
-    features: [
-      'Reading and listening in Arabic',
-      'Browse, download, highlight, and listen',
-      'Offline access',
-      'Audio playback',
-    ],
-    seoTitle: 'Kalam | Arabic Library App by Michael Mangialardi',
     seoDescription:
       'Kalam is an Arabic library app for reading and listening. Readers can browse, download, highlight, and listen. Built by Michael Mangialardi.',
     icon: '/work/kalam-icon.png',
@@ -182,7 +156,3 @@ export const projects: Project[] = [
     ],
   },
 ]
-
-export function getProject(slug: string) {
-  return projects.find((project) => project.slug === slug)
-}

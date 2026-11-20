@@ -1,6 +1,8 @@
 # Michael Mangialardi
 
-Personal site for independent software work: websites, apps, and automation.
+Site for Michael's digital handyman work in the New River Valley (websites, Google listings, ads, cybersecurity, print) and bigger software builds (apps, automation, AI integrations, search).
+
+Service copy lives in `lib/services.ts`; projects live in `lib/site.ts`.
 
 ## Development
 
@@ -20,9 +22,9 @@ Canonical URLs, Open Graph tags, and the sitemap use `https://www.michaelmang.co
 ### SEO
 
 - `/sitemap.xml` and `/robots.txt` are generated automatically
-- JSON-LD covers the person, the service, the two apps, FAQs, and breadcrumbs
-- Indexable work pages live at `/work`, `/work/monergism-ebook-library`, and `/work/kalam`
-- Metadata is configured in `app/layout.tsx`, `app/work/`, and `lib/site.ts`
+- JSON-LD covers the person, the business with its service catalog and service area, and the apps
+- The old `/work` project pages redirect to the homepage's work section (see `next.config.mjs`)
+- Metadata is configured in `app/layout.tsx` and `lib/site.ts`
 
 ### Contact form
 

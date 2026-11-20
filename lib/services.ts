@@ -9,7 +9,7 @@ export const everydayServices: Service[] = [
     name: 'Google listings and SEO',
     description: 'Organically draw visitors to your business and website',
   },
-  { name: 'Google Ads', description: 'Target your audience to drive interaction' },
+  { name: 'Google Ads', description: 'Target your audience to bring in calls and visits' },
   {
     name: 'Cybersecurity',
     description:
@@ -17,7 +17,7 @@ export const everydayServices: Service[] = [
   },
   {
     name: 'Flyers and print',
-    description: "I provide designs that’ll distinguish you from AI slop",
+    description: "I provide hand-made designs that’ll set you apart from AI-generated ones",
   },
   {
     name: 'Everything else digital',
@@ -41,13 +41,13 @@ export const buildServices: Service[] = [
       'I can slash your costs, remove your bottlenecks, and give you time back to advance your business through software integrations',
   },
   {
-    name: 'AI integrations',
+    name: 'AI integrations (MCP servers)',
     description:
       'I can integrate secure AI workflows that scale your business without complicating coordination',
   },
   {
     name: 'Custom search engines',
     description:
-      'I build search engines that find relevant information across your documents and other artifacts, eliminating the scavenger hunt in your business processes',
+      'I build search engines that find relevant information across your documents and other files, eliminating the scavenger hunt in your business processes',
   },
 ]

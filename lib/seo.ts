@@ -1,7 +1,24 @@
+import { buildServices, everydayServices, type Service } from '@/lib/services'
 import { projects, siteConfig, siteUrl, type Project } from '@/lib/site'
 
 const personId = `${siteUrl}/#person`
 const businessId = `${siteUrl}/#business`
+const allServices = [...everydayServices, ...buildServices]
+
+function serviceCatalog(name: string, services: Service[]) {
+  return {
+    '@type': 'OfferCatalog',
+    name,
+    itemListElement: services.map((service) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: service.name,
+        description: service.description,
+      },
+    })),
+  }
+}
 
 export function personJsonLd() {
   return {
@@ -20,13 +37,7 @@ export function personJsonLd() {
       addressRegion: siteConfig.location.region,
       addressCountry: siteConfig.location.country,
     },
-    knowsAbout: [
-      'Website development',
-      'iOS app development',
-      'Android app development',
-      'Process automation',
-      'Custom software',
-    ],
+    knowsAbout: allServices.map((service) => service.name),
   }
 }
 
@@ -56,6 +67,13 @@ export function organizationJsonLd() {
       if (place === 'Virginia') {
         return { '@type': 'State', name: place }
       }
+      if (place === 'New River Valley') {
+        return {
+          '@type': 'AdministrativeArea',
+          name: place,
+          containedInPlace: { '@type': 'State', name: 'Virginia' },
+        }
+      }
       return {
         '@type': 'City',
         name: place,
@@ -65,48 +83,14 @@ export function organizationJsonLd() {
         },
       }
     }),
-    knowsAbout: [
-      'Website development',
-      'Mobile app development',
-      'Process automation',
-      'iOS apps',
-      'Android apps',
-      'Custom software',
-    ],
-    serviceType: [
-      'Website development',
-      'Mobile app development',
-      'Process automation',
-      'Custom software development',
-    ],
+    knowsAbout: allServices.map((service) => service.name),
+    serviceType: allServices.map((service) => service.name),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Software work',
+      name: 'Services',
       itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Website development',
-            description: 'Public sites, product sites, and the pieces that sit behind them.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'App development',
-            description: 'iOS, Android, and web apps.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Process automation',
-            description: 'Connecting websites, apps, and day-to-day processes.',
-          },
-        },
+        serviceCatalog('Everyday digital work', everydayServices),
+        serviceCatalog('Bigger builds', buildServices),
       ],
     },
     contactPoint: {
@@ -137,13 +121,13 @@ export function softwareJsonLd(project: Project) {
 
   return {
     '@type': 'SoftwareApplication',
-    '@id': `${siteUrl}/work/${project.slug}#app`,
+    '@id': `${siteUrl}/#${project.slug}`,
     name: project.name,
     description: project.seoDescription,
     applicationCategory: project.applicationCategory,
     operatingSystem: project.operatingSystem,
     image: `${siteUrl}${project.screenshot}`,
-    url: `${siteUrl}/work/${project.slug}`,
+    url: `${siteUrl}/#work`,
     author: { '@id': personId },
     creator: { '@id': personId },
     offers: {
@@ -153,18 +137,6 @@ export function softwareJsonLd(project: Project) {
     },
     sameAs: project.links.map((link) => link.href),
     ...(appStore ? { installUrl: appStore.href } : {}),
-  }
-}
-
-export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
-  return {
-    '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: `${siteUrl}${item.path}`,
-    })),
   }
 }
 
@@ -182,46 +154,3 @@ export function homeJsonLd() {
   }
 }
 
-export function workIndexJsonLd() {
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      personJsonLd(),
-      breadcrumbJsonLd([
-        { name: 'Home', path: '/' },
-        { name: 'Work', path: '/work' },
-      ]),
-      {
-        '@type': 'CollectionPage',
-        '@id': `${siteUrl}/work#page`,
-        name: 'Work',
-        url: `${siteUrl}/work`,
-        description: 'Websites, iOS apps, and Android apps I have built.',
-        mainEntity: {
-          '@type': 'ItemList',
-          itemListElement: projects.map((project, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            url: `${siteUrl}/work/${project.slug}`,
-            name: project.name,
-          })),
-        },
-      },
-    ],
-  }
-}
-
-export function projectJsonLd(project: Project) {
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      personJsonLd(),
-      softwareJsonLd(project),
-      breadcrumbJsonLd([
-        { name: 'Home', path: '/' },
-        { name: 'Work', path: '/work' },
-        { name: project.name, path: `/work/${project.slug}` },
-      ]),
-    ],
-  }
-}
