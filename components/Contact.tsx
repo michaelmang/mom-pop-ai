@@ -1,4 +1,5 @@
 import ContactForm from '@/components/ContactForm'
+import Reveal from '@/components/Reveal'
 import { siteConfig } from '@/lib/site'
 
 const linkClass =
@@ -8,7 +9,7 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 pb-16 scroll-mt-20">
       <div className="max-w-5xl mx-auto w-full">
-        <div className="glass rounded-3xl p-7 sm:p-10 w-full">
+        <Reveal className="glass rounded-3xl p-7 sm:p-10 w-full">
           <p className="font-serif text-2xl sm:text-3xl leading-snug text-ink text-balance">
             Call or text{' '}
             <a href={`tel:${siteConfig.phoneE164}`} className={`${linkClass} whitespace-nowrap`}>
@@ -23,7 +24,7 @@ export default function Contact() {
           <div className="mt-8">
             <ContactForm />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

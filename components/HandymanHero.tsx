@@ -9,7 +9,7 @@ export default function HandymanHero() {
             Hi, I&rsquo;m Michael. I&rsquo;m a digital handyman in Virginia&rsquo;s New
             River Valley and an experienced software engineer.
           </h1>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-up [animation-delay:250ms]">
             <a href={`tel:${siteConfig.phoneE164}`} className="btn-gold w-full sm:w-auto">
               Call or text {siteConfig.phone}
             </a>

@@ -37,10 +37,16 @@ const config: Config = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        // A slow pan across the background painting.
+        drift: {
+          '0%': { transform: 'scale(1.02) translate3d(0, 0, 0)' },
+          '100%': { transform: 'scale(1.1) translate3d(-1.5%, -1%, 0)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.7s ease-out both',
         'fade-in': 'fade-in 0.6s ease-out both',
+        drift: 'drift 60s ease-in-out infinite alternate',
       },
     },
   },

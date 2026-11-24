@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Reveal from '@/components/Reveal'
 import { projects, type Project } from '@/lib/site'
 
 function isLandscape(project: Project) {
@@ -9,7 +10,7 @@ function ProjectCard({ project }: { project: Project }) {
   const landscape = isLandscape(project)
 
   return (
-    <article className="glass rounded-3xl p-6 sm:p-8 w-full">
+    <Reveal as="article" className="glass rounded-3xl p-6 sm:p-8 w-full">
       <div
         className={`grid gap-8 md:gap-12 items-center ${
           landscape ? '' : 'md:grid-cols-[1.2fr_0.8fr]'
@@ -68,7 +69,7 @@ function ProjectCard({ project }: { project: Project }) {
           />
         </div>
       </div>
-    </article>
+    </Reveal>
   )
 }
 

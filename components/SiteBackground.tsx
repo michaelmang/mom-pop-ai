@@ -19,7 +19,7 @@ export default function SiteBackground() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center scale-[1.02]"
+        className="object-cover object-center scale-[1.02] motion-safe:md:animate-drift md:will-change-transform"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(0,0,0,0.35)_70%)]" />

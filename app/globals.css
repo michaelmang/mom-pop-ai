@@ -46,16 +46,28 @@ body {
 @layer components {
   .btn-gold {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#C4A574] px-6 py-3
-           text-[15px] font-semibold text-[#161616] transition-colors hover:bg-[#D8BC8E]
-           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+           text-[15px] font-semibold text-[#161616] transition hover:bg-[#D8BC8E]
+           active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
            focus-visible:outline-[#C4A574] disabled:opacity-60 disabled:cursor-wait;
   }
 
   .btn-glass {
     @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25
-           bg-white/[0.06] px-6 py-3 text-[15px] font-medium text-ink transition-colors
-           hover:bg-white/[0.12] hover:border-white/40;
+           bg-white/[0.06] px-6 py-3 text-[15px] font-medium text-ink transition
+           hover:bg-white/[0.12] hover:border-white/40 active:scale-[0.97];
   }
+}
+
+/* Scroll reveals; see components/Reveal.tsx. */
+.reveal-waiting {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal-shown {
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 ::selection {
